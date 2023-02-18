@@ -1,15 +1,15 @@
-# ris
+# RISify
 
-`ris` is a Python library that provides functions for encoding and decoding 
+`RISify` is a Python library that provides functions for encoding and decoding 
 Regional Indicator Symbols (RIS), which are Unicode characters used to 
 represent flags of countries and regions.
 
 ## Installation
 
-You can install `ris` via pip:
+You can install `RISify` via pip:
 
 ```bash
-pip install ris
+pip install RISify
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ fo = RIS("🇫🇴")
 print(fo.encode(encoding="html")) # &#127467;&#127476;
 ```
 
-Note that `ris` also provides functions for encoding and decoding RIS as 
+Note that `RISify` also provides functions for encoding and decoding RIS as 
 HTML-safe symbols, which can be useful for ensuring that the symbols are 
 markup-safe when used in HTML
 
@@ -46,5 +46,5 @@ contribute code, please fork the repository and submit a pull request.
 
 ## License
 
-`ris` is released under the GPLv3 license. See [LICENSE](LICENCE) for
+`RISify` is released under the GPLv3 license. See [LICENSE](LICENCE) for
 details.
