@@ -21,7 +21,7 @@ from ris import RIS
 pt = RIS.decode("PT")
 print(pt) # 🇵🇹
 
-# decode HTML-symbols to RIT
+# decode HTML-symbols to RIS
 de = RIS.decode("&#127465;&#127466;", encoding="html")
 print(de) # 🇩🇪
 
