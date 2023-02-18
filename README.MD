@@ -41,7 +41,7 @@ markup-safe when used in HTML
 ## Contributing
 
 Contributions are welcome! If you find a bug or have an idea for a new 
-feature, please open an issue on the GitHub repository. If you would like to 
+feature, please open an issue on the GitLab repository. If you would like to 
 contribute code, please fork the repository and submit a pull request.
 
 ## License
