@@ -3,8 +3,8 @@ requires       = [ "setuptools>=61.0" ]
 build-backend  = "setuptools.build_meta"
 
 [project]
-name          = "ris-py"
-version       = "1.0.1"
+name          = "ris"
+version       = "1.0.0"
 description   = "Simplifies the encoding and decoding of Regional Indicator Symbols."
 readme        = "README.MD"
 authors       = [

@@ -52,7 +52,7 @@ test-pypi:
   extends: .publish
   environment:
     name: TestPyPI
-    url:  https://test.pypi.org/project/ris-py/
+    url:  https://test.pypi.org/project/ris/
   variables:
     TWINE_USERNAME:   __token__
     TWINE_PASSWORD:   $TEST_PYPI_TOKEN
@@ -66,7 +66,7 @@ pypi:
   extends: .publish
   environment:
     name: PyPI
-    url:  https://pypi.org/project/ris-py/
+    url:  https://pypi.org/project/ris/
   variables:
     TWINE_USERNAME:   __token__
     TWINE_PASSWORD:   $PYPI_TOKEN
