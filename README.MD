@@ -15,28 +15,46 @@ pip install RISify
 ## Usage
 
 ```python
-from ris import RIS
+from ris import ris
 
 # decode a country code to RIS
-pt = RIS.decode("PT")
-print(pt) # 🇵🇹
+pt = ris("PT")
 
-# decode HTML-symbols to RIS
-de = RIS.decode("&#127465;&#127466;", encoding="html")
-print(de) # 🇩🇪
+print(pt)  # 🇵🇹
 
-# encode a RIS to country code
-nl = RIS("🇳🇱")
-print(nl.encode()) # NL
+# decode an HTML code to RIS
+de = ris("&#127465;&#127466;")
+de = de.encode("unicode")  # default
 
-# encode a RIS to HTML-safe symbols
-fo = RIS("🇫🇴")
-print(fo.encode(encoding="html")) # &#127467;&#127476;
+print(de)  # 🇩🇪
+
+# encode a RIS code to uppercase ASCII
+nl = ris("🇳🇱")
+nl = nl.encode("ascii")
+nl = nl.upper()  # default
+
+print(nl)  # NL
+
+# encode a RIS code to lowercase ASCII
+eu = ris("🇪🇺")
+eu = eu.encode("ascii")
+eu = eu.lower()
+
+print(eu)  # eu
+
+# encode a RIS code to HTML
+fo = ris("🇫🇴")
+fo = fo.encode("html")
+
+print(fo)  # &#127467;&#127476;
+
+# concatenate RIS codes into a string
+print("spam " + pt + " bacon " + de + " sausage " + nl + " eggs " + eu + " ham " + fo)
+# spam 🇵🇹 bacon 🇩🇪 sausage NL eggs eu ham &#127467;&#127476;
 ```
 
-Note that `RISify` also provides functions for encoding and decoding RIS as 
-HTML-safe symbols, which can be useful for ensuring that the symbols are 
-markup-safe when used in HTML
+Note that HTML is encoded with HTML-safe symbols, which can be useful for 
+ensuring that the symbols are markup-safe when used in HTML.
 
 ## Contributing
 
