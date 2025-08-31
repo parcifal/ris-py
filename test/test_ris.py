@@ -77,7 +77,7 @@ class TestRIS(TestCase):
         """
         Assert that invalid RIS-codes will result in an error.
         """
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             ris("123")
 
     def test_ris_concat(self):
