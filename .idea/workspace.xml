@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="" />
+    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icon.svg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +23,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;c2a4b8dc&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "c5a9bbb6",
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="323225nWmY04nIyBiZJHDq6maXF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -90,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1756634725017</updated>
       <workItem from="1756634726258" duration="8251000" />
-      <workItem from="1756709638556" duration="889000" />
+      <workItem from="1756709638556" duration="1196000" />
     </task>
     <servers />
   </component>
