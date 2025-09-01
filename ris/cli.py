@@ -84,7 +84,7 @@ def main():
     log_level = LOGGING_LEVELS.get(args.verbose, logging.DEBUG)
 
     logging.basicConfig(level=log_level, filename=args.output_log)
-    logging.debug(f"verbosity level set to {args.verbose}")
+    logging.debug("verbosity level set to %d", args.verbose)
 
     uppercase = False
 
