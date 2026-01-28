@@ -51,13 +51,13 @@ jobs:
           
           echo "name=$TAG" >> "$GITHUB_STEP_OUTPUT"
 
-      - uses: https://forgejo.van-de-weerd.net/parcifal/tag-create@master
+      - uses: https://forgejo.van-de-weerd.net/parcifal/common/tag-create@master
         with:
           tag: ${{ steps.tag.name }}
           message: "Tag version ${{ steps.tag.name }}"
 
       - id: release
-        uses: https://forgejo.van-de-weerd.net/parcifal/release-create@master
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/release-create@master
         with:
           tag: ${{ steps.tag.name }}
           attachment: ./dist/*.tar.gz
