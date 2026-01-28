@@ -101,12 +101,6 @@ jobs:
             name: "dist"
             path: ${{ needs.build.outputs.dist }}
 
-#        - name: "Tag version"
-#          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
-#          with:
-#            tag: ${{ needs.setup.outputs.tag }}
-#            message: "Tag version ${{ needs.setup.outputs.tag }}"
-
         - name: "Set release"
           id: release
           uses: https://forgejo.van-de-weerd.net/parcifal/common/release@master
