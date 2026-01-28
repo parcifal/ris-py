@@ -4,7 +4,7 @@ build-backend  = "setuptools.build_meta"
 
 [project]
 name           = "RISify"
-version        = "1.2.1"
+version        = "1.2.2"
 description    = "Simplifies the encoding and decoding of Regional Indicator Symbols."
 readme         = "README.md"
 license        = "AGPL-3.0-only"
@@ -32,7 +32,6 @@ ris = "ris.cli:main"
 [project.optional-dependencies]
 dev = [
     "pylint",
-    "pylint-gitlab",
     "pytest",
     "pytest-cov",
     "coverage"

@@ -1,0 +1,63 @@
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+jobs:
+  publish:
+    runs-on: docker
+    steps:
+      - uses: https://data.forgejo.org/actions/checkout@v4
+      - uses: https://forgejo.van-de-weerd.net/parcifal/common/python-build
+
+      - if: ${{ github.ref_name == "develop" }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        with:
+          repository: testpypi
+        env:
+          TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
+
+      - if: ${{ github.ref_name == "master" }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        with:
+          repository: pypi
+        env:
+          TWINE_USERNAME: ${{ vars.PYPI_USER }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+      - if: ${{ github.ref_name == "master" }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        with:
+          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
+        env:
+          TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
+          TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
+
+      - id: version
+        uses: https://forgejo.van-de-weerd.net/parcifal/toml-attribute
+        with:
+          attribute: project.version
+
+      - id: tag
+        shell: bash
+        run: |
+          TAG="${{ steps.version.outputs.value }}"
+          
+          if [ "${{ github.ref_name }}" = "develop" ]; then
+            TAG="$TAG-dev"
+          fi
+          
+          echo "name=$TAG" >> "$GITHUB_STEP_OUTPUT"
+
+      - uses: https://forgejo.van-de-weerd.net/parcifal/tag-create
+        with:
+          tag: ${{ steps.tag.name }}
+          message: "Tag version ${{ steps.tag.name }}"
+
+      - id: release
+        uses: https://forgejo.van-de-weerd.net/parcifal/release-create
+        with:
+          tag: ${{ steps.tag.name }}
+          attachment: ./dist/*.tar.gz

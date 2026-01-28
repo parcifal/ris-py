@@ -7,9 +7,11 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/RISify.egg-info" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/htmlcov" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (ris-py)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="common" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
