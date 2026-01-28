@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="" />
+    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.forgejo/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.forgejo/workflows/deploy.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
