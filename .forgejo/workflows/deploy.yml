@@ -9,10 +9,10 @@ jobs:
     runs-on: docker
     steps:
       - uses: https://data.forgejo.org/actions/checkout@v4
-      - uses: https://forgejo.van-de-weerd.net/parcifal/common/python-build
+      - uses: https://forgejo.van-de-weerd.net/parcifal/common/python-build@master
 
       - if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
         with:
           repository: testpypi
         env:
@@ -20,7 +20,7 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
 
       - if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
         with:
           repository: pypi
         env:
@@ -28,15 +28,15 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
 
       - if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
         with:
-          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
+          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi@master
         env:
           TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
           TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
 
       - id: version
-        uses: https://forgejo.van-de-weerd.net/parcifal/toml-attribute
+        uses: https://forgejo.van-de-weerd.net/parcifal/toml-attribute@master
         with:
           attribute: project.version
 
@@ -51,13 +51,13 @@ jobs:
           
           echo "name=$TAG" >> "$GITHUB_STEP_OUTPUT"
 
-      - uses: https://forgejo.van-de-weerd.net/parcifal/tag-create
+      - uses: https://forgejo.van-de-weerd.net/parcifal/tag-create@master
         with:
           tag: ${{ steps.tag.name }}
           message: "Tag version ${{ steps.tag.name }}"
 
       - id: release
-        uses: https://forgejo.van-de-weerd.net/parcifal/release-create
+        uses: https://forgejo.van-de-weerd.net/parcifal/release-create@master
         with:
           tag: ${{ steps.tag.name }}
           attachment: ./dist/*.tar.gz
