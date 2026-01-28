@@ -28,78 +28,78 @@ jobs:
           
           echo "name=$TAG" >> "$GITHUB_STEP_OUTPUT"
 
-  build:
-    runs-on: docker
-    outputs:
-      dist: ${{ steps.build.outputs.dist }}
-    steps:
-      - id: build
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/python/build@master
-
-      - uses: https://data.forgejo.org/actions/upload-artifact@v6
-        with:
-          name: "dist"
-          path: ${{ steps.build.outputs.dist }}
-
-  publish:
-    runs-on: docker
-    needs: build
-    steps:
-      - uses: https://data.forgejo.org/actions/download-artifact@v7
-        with:
-          name: "dist"
-          path: ${{ needs.build.outputs.dist }}
-
-      - name: "Publish to PyPI Test"
-        if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: testpypi
-          dist: ${{ needs.build.outputs.dist }}
-        env:
-          TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
-
-      - name: "Publish to PyPI"
-        if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: pypi
-          dist: ${{ needs.build.outputs.dist }}
-        env:
-          TWINE_USERNAME: ${{ vars.PYPI_USER }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-
-      - name: "Publish to Forgejo PyPI"
-        if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
-          dist: ${{ needs.build.outputs.dist }}
-        env:
-          TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
-          TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
-
-  release:
-      runs-on: docker
-      needs:
-        - setup
-        - build
-      steps:
-        - uses: https://data.forgejo.org/actions/download-artifact@v7
-          with:
-            name: "dist"
-            path: ${{ needs.build.outputs.dist }}
-
-        - name: "Tag version"
-          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
-          with:
-            tag: ${{ needs.setup.outputs.tag }}
-            message: "Tag version ${{ needs.setup.outputs.tag }}"
-
-        - name: "Set release"
-          id: release
-          uses: https://forgejo.van-de-weerd.net/parcifal/common/release@master
-          with:
-            tag: ${{ needs.setup.outputs.tag }}
-            attachment: ./dist/*.tar.gz
+#  build:
+#    runs-on: docker
+#    outputs:
+#      dist: ${{ steps.build.outputs.dist }}
+#    steps:
+#      - id: build
+#        uses: https://forgejo.van-de-weerd.net/parcifal/common/python/build@master
+#
+#      - uses: https://data.forgejo.org/actions/upload-artifact@v6
+#        with:
+#          name: "dist"
+#          path: ${{ steps.build.outputs.dist }}
+#
+#  publish:
+#    runs-on: docker
+#    needs: build
+#    steps:
+#      - uses: https://data.forgejo.org/actions/download-artifact@v7
+#        with:
+#          name: "dist"
+#          path: ${{ needs.build.outputs.dist }}
+#
+#      - name: "Publish to PyPI Test"
+#        if: ${{ github.ref_name == 'develop' }}
+#        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+#        with:
+#          repository: testpypi
+#          dist: ${{ needs.build.outputs.dist }}
+#        env:
+#          TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
+#          TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
+#
+#      - name: "Publish to PyPI"
+#        if: ${{ github.ref_name == 'master' }}
+#        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+#        with:
+#          repository: pypi
+#          dist: ${{ needs.build.outputs.dist }}
+#        env:
+#          TWINE_USERNAME: ${{ vars.PYPI_USER }}
+#          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+#
+#      - name: "Publish to Forgejo PyPI"
+#        if: ${{ github.ref_name == 'master' }}
+#        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+#        with:
+#          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
+#          dist: ${{ needs.build.outputs.dist }}
+#        env:
+#          TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
+#          TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
+#
+#  release:
+#      runs-on: docker
+#      needs:
+#        - setup
+#        - build
+#      steps:
+#        - uses: https://data.forgejo.org/actions/download-artifact@v7
+#          with:
+#            name: "dist"
+#            path: ${{ needs.build.outputs.dist }}
+#
+#        - name: "Tag version"
+#          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
+#          with:
+#            tag: ${{ needs.setup.outputs.tag }}
+#            message: "Tag version ${{ needs.setup.outputs.tag }}"
+#
+#        - name: "Set release"
+#          id: release
+#          uses: https://forgejo.van-de-weerd.net/parcifal/common/release@master
+#          with:
+#            tag: ${{ needs.setup.outputs.tag }}
+#            attachment: ./dist/*.tar.gz
