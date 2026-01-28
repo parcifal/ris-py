@@ -36,7 +36,7 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
 
       - id: version
-        uses: https://forgejo.van-de-weerd.net/parcifal/toml-attribute@master
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/toml-attribute@master
         with:
           attribute: project.version
 
