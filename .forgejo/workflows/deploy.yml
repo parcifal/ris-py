@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: "Build dist"
         id: build
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/python/build@v1
+        uses: https://forgejo.van-de-weerd.net/actions/python/build@v1
 
       - name: "Upload dist"
         uses: https://data.forgejo.org/actions/upload-artifact@v3
@@ -61,7 +61,7 @@ jobs:
 
       - name: "Publish to PyPI Test"
         if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@v1
+        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: testpypi
           dist: ${{ needs.build.outputs.dist }}
@@ -71,7 +71,7 @@ jobs:
 
       - name: "Publish to PyPI"
         if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@v1
+        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: pypi
           dist: ${{ needs.build.outputs.dist }}
@@ -81,7 +81,7 @@ jobs:
 
       - name: "Publish to Forgejo PyPI"
         if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@v1
+        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
           dist: ${{ needs.build.outputs.dist }}
@@ -103,7 +103,7 @@ jobs:
 
         - name: "Set release"
           id: release
-          uses: https://forgejo.van-de-weerd.net/parcifal/common/release@v1
+          uses: https://forgejo.van-de-weerd.net/actions/release@v1
           with:
             tag: ${{ needs.setup.outputs.tag }}
             attachments: |
