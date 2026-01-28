@@ -5,42 +5,19 @@ on:
       - master
 
 jobs:
-  publish:
+  setup:
     runs-on: docker
+    outputs:
+      tag: ${{ steps.tag.outputs.name }}
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@v4
-      - uses: https://forgejo.van-de-weerd.net/parcifal/common/python-build@master
-
-      - if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: testpypi
-        env:
-          TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
-
-      - if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: pypi
-        env:
-          TWINE_USERNAME: ${{ vars.PYPI_USER }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-
-      - if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
-        with:
-          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi@master
-        env:
-          TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
-          TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
-
-      - id: version
+      - name: "Retrieve version"
+        id: version
         uses: https://forgejo.van-de-weerd.net/parcifal/common/toml-attribute@master
         with:
-          attribute: project.version
+          key: project.version
 
-      - id: tag
+      - name: "Determine tag"
+        id: tag
         shell: bash
         run: |
           TAG="${{ steps.version.outputs.value }}"
@@ -51,13 +28,78 @@ jobs:
           
           echo "name=$TAG" >> "$GITHUB_STEP_OUTPUT"
 
-      - uses: https://forgejo.van-de-weerd.net/parcifal/common/tag-create@master
-        with:
-          tag: ${{ steps.tag.name }}
-          message: "Tag version ${{ steps.tag.name }}"
+  build:
+    runs-on: docker
+    outputs:
+      dist: ${{ steps.build.outputs.dist }}
+    steps:
+      - id: build
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/python/build@master
 
-      - id: release
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/release-create@master
+      - uses: https://data.forgejo.org/actions/upload-artifact@v6
         with:
-          tag: ${{ steps.tag.name }}
-          attachment: ./dist/*.tar.gz
+          name: "dist"
+          path: ${{ steps.build.outputs.dist }}
+
+  publish:
+    runs-on: docker
+    needs: build
+    steps:
+      - uses: https://data.forgejo.org/actions/download-artifact@v7
+        with:
+          name: "dist"
+          path: ${{ needs.build.outputs.dist }}
+
+      - name: "Publish to PyPI Test"
+        if: ${{ github.ref_name == 'develop' }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+        with:
+          repository: testpypi
+          dist: ${{ needs.build.outputs.dist }}
+        env:
+          TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
+
+      - name: "Publish to PyPI"
+        if: ${{ github.ref_name == 'master' }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+        with:
+          repository: pypi
+          dist: ${{ needs.build.outputs.dist }}
+        env:
+          TWINE_USERNAME: ${{ vars.PYPI_USER }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+      - name: "Publish to Forgejo PyPI"
+        if: ${{ github.ref_name == 'master' }}
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/twine@master
+        with:
+          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
+          dist: ${{ needs.build.outputs.dist }}
+        env:
+          TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
+          TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
+
+  release:
+      runs-on: docker
+      needs:
+        - setup
+        - build
+      steps:
+        - uses: https://data.forgejo.org/actions/download-artifact@v7
+          with:
+            name: "dist"
+            path: ${{ needs.build.outputs.dist }}
+
+        - name: "Tag version"
+          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
+          with:
+            tag: ${{ needs.setup.outputs.tag }}
+            message: "Tag version ${{ needs.setup.outputs.tag }}"
+
+        - name: "Set release"
+          id: release
+          uses: https://forgejo.van-de-weerd.net/parcifal/common/release@master
+          with:
+            tag: ${{ needs.setup.outputs.tag }}
+            attachment: ./dist/*.tar.gz

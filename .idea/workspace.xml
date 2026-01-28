@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="" />
+    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../common/python-build/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/python/build/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/python/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/python/setup/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/release-create/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/release/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/tag-create/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/tag/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/toml-attribute/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/toml-attribute/action.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.forgejo/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.forgejo/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../common" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
@@ -55,7 +63,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/michael/git/parcifal/common",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -68,6 +76,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../common/python/build" />
+      <recent name="$PROJECT_DIR$/../common/python/setup" />
       <recent name="$PROJECT_DIR$/ris" />
     </key>
   </component>
