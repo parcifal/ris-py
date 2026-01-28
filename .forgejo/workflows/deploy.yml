@@ -111,4 +111,6 @@ jobs:
           uses: https://forgejo.van-de-weerd.net/parcifal/common/release@master
           with:
             tag: ${{ needs.setup.outputs.tag }}
-            attachment: ./dist/*.tar.gz
+            attachment: |
+              ${{ needs.build.outputs.dist }}*.tar.gz
+              ${{ needs.build.outputs.dist }}*.whl
