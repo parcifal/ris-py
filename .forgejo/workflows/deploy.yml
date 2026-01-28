@@ -42,7 +42,7 @@ jobs:
         uses: https://data.forgejo.org/actions/upload-artifact@v3
         with:
           name: "dist"
-          path: ${{ steps.build.outputs.dist }}./*
+          path: ${{ steps.build.outputs.dist }}*
 
   publish:
     runs-on: docker
