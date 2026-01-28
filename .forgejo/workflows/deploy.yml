@@ -9,6 +9,7 @@ jobs:
     runs-on: docker
     outputs:
       tag: ${{ steps.tag.outputs.name }}
+      version: ${{ steps.version.outputs.value }}
     steps:
       - name: "Retrieve version"
         id: version
@@ -100,11 +101,11 @@ jobs:
             name: "dist"
             path: ${{ needs.build.outputs.dist }}
 
-        - name: "Tag version"
-          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
-          with:
-            tag: ${{ needs.setup.outputs.tag }}
-            message: "Tag version ${{ needs.setup.outputs.tag }}"
+#        - name: "Tag version"
+#          uses: https://forgejo.van-de-weerd.net/parcifal/common/tag@master
+#          with:
+#            tag: ${{ needs.setup.outputs.tag }}
+#            message: "Tag version ${{ needs.setup.outputs.tag }}"
 
         - name: "Set release"
           id: release
