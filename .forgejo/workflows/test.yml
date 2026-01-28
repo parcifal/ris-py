@@ -4,4 +4,5 @@ jobs:
   test:
     runs-on: docker
     steps:
-      - uses: https://forgejo.van-de-weerd.net/parcifal/common/pytest@master
+      - name: "Run PyTest"
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/pytest@master

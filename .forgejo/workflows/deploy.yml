@@ -54,7 +54,9 @@ jobs:
         uses: https://data.forgejo.org/actions/download-artifact@v3
         with:
           name: "dist"
-          path: ${{ needs.build.outputs.dist }}
+          path: |
+            ${{ needs.build.outputs.dist }}*.tar.gz
+            ${{ needs.build.outputs.dist }}*.whl
 
       - name: "Publish to PyPI Test"
         if: ${{ github.ref_name == 'develop' }}

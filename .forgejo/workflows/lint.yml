@@ -4,6 +4,7 @@ jobs:
   lint:
     runs-on: docker
     steps:
-      - uses: https://forgejo.van-de-weerd.net/parcifal/common/pylint@master
+      - name: "Run PyLint"
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/pylint@master
         with:
           sources: ris test
