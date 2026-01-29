@@ -106,7 +106,7 @@ jobs:
             path: dist
 
         - name: "Create release"
-          uses: https://data.forgejo.org/actions/forgejo-release@v.2.9.0
+          uses: https://data.forgejo.org/actions/forgejo-release@v2.9.0
           with:
             direction: upload
             title: "Release ${{ needs.setup.outputs.tag }}"
