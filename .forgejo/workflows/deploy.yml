@@ -101,6 +101,11 @@ jobs:
             name: "dist"
             path: ${{ needs.build.outputs.dist }}
 
+        - shell: bash
+          run: |
+            echo " > ls -la"
+            ls -la
+
         - name: "Set release"
           id: release
           uses: https://forgejo.van-de-weerd.net/actions/release@v1
