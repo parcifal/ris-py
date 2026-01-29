@@ -11,7 +11,8 @@ jobs:
       tag: ${{ steps.tag.outputs.name }}
       version: ${{ steps.version.outputs.value }}
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@v3
+      - name: "Checkout"
+        uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Retrieve version"
         id: version
@@ -37,7 +38,8 @@ jobs:
     outputs:
       dist: ${{ steps.build.outputs.dist }}
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@v3
+      - name: "Checkout"
+        uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Build dist"
         id: build
@@ -55,12 +57,17 @@ jobs:
     runs-on: docker
     needs: build
     steps:
+      - name: "Download dist"
+        uses: https://data.forgejo.org/actions/download-artifact@v3
+        with:
+          name: "dist"
+          path: dist
+
       - name: "Publish to PyPI Test"
         if: ${{ github.ref_name == 'develop' }}
         uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: testpypi
-          artifact: "dist"
         env:
           TWINE_USERNAME: ${{ vars.PYPI_TEST_USER }}
           TWINE_PASSWORD: ${{ secrets.PYPI_TEST_TOKEN }}
@@ -70,7 +77,6 @@ jobs:
         uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: pypi
-          artifact: "dist"
         env:
           TWINE_USERNAME: ${{ vars.PYPI_USER }}
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
@@ -80,7 +86,6 @@ jobs:
         uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
-          artifact: "dist"
         env:
           TWINE_USERNAME: ${{ vars.FORGEJO_PYPI_USER }}
           TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
@@ -91,11 +96,22 @@ jobs:
         - setup
         - build
       steps:
-        - uses: https://data.forgejo.org/actions/checkout@v3
+        - name: "Checkout"
+          uses: https://data.forgejo.org/actions/checkout@v3
 
-        - name: "Set release"
-          id: release
-          uses: https://forgejo.van-de-weerd.net/actions/release@v1
+        - name: "Download dist"
+          uses: https://data.forgejo.org/actions/download-artifact@v3
           with:
+            name: "dist"
+            path: dist
+
+        - name: "Create release"
+          uses: https://data.forgejo.org/actions/forgejo-release@v.2.9.0
+          with:
+            direction: upload
+            title: "Release ${{ needs.setup.outputs.tag }}"
             tag: ${{ needs.setup.outputs.tag }}
-            artifact: "dist"
+            override: true
+            prerelease: ${{ github.ref_name == 'develop' }}
+            release-notes-assistant: true
+            release-dir: dist
