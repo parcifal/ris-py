@@ -12,6 +12,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (ris-py)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="release" />
+    <orderEntry type="module" module-name="git" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

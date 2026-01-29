@@ -106,6 +106,5 @@ jobs:
           uses: https://forgejo.van-de-weerd.net/actions/release@v1
           with:
             tag: ${{ needs.setup.outputs.tag }}
-            attachments: |
-              ${{ needs.build.outputs.dist }}*.tar.gz
-              ${{ needs.build.outputs.dist }}*.whl
+            attachment: |
+              ${{ needs.build.outputs.dist }}
