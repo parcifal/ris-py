@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="release" />
     <orderEntry type="module" module-name="git" />
     <orderEntry type="module" module-name="twine" />
+    <orderEntry type="module" module-name="python" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
