@@ -105,6 +105,12 @@ jobs:
             name: "dist"
             path: dist
 
+        - name: "Create tag"
+          uses: https://forgejo.van-de-weerd.net/actions/git/tag/create@v1
+          with:
+            tag: ${{ needs.setup.outputs.tag }}
+            message: "Release ${{ needs.setup.outputs.tag"
+
         - name: "Create release"
           uses: https://data.forgejo.org/actions/forgejo-release@v2.9.0
           with:
