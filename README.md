@@ -32,7 +32,7 @@ pip install RISify
 Or install directly from source:
 
 ```bash
-git clone git@gitlab.com:parcifal/ris-py.git
+git clone git@forgejo.van-de-weerd.net:parcifal/ris-py.git
 cd ris-py
 pip install .
 ```
@@ -132,7 +132,7 @@ ris PT -vvv -l ris.log
 ## Contributing
 
 Found a bug? Have a suggestion? Open an issue or submit a merge request at
-[the GitLab repository](https://gitlab.com/parcifal/ris-py). All 
+[the Forgejo repository](https://forgejo.van-de-weerd.net/parcifal/ris-py). All 
 contributions are welcome.
 
 [develop]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/develop
