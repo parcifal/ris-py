@@ -4,7 +4,8 @@ jobs:
   lint:
     runs-on: docker
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@v3
+      - name: "Checkout"
+        uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyLint"
         uses: https://forgejo.van-de-weerd.net/parcifal/common/pylint@master
@@ -14,7 +15,8 @@ jobs:
   test:
     runs-on: docker
     steps:
-      - uses: https://data.forgejo.org/actions/checkout@v3
+      - name: "Checkout"
+        uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyTest"
         uses: https://forgejo.van-de-weerd.net/parcifal/common/pytest@master
@@ -114,7 +116,9 @@ jobs:
   release:
     if: github.ref_name == 'develop' || github.ref_name == 'master'
     runs-on: docker
-    needs: build
+    needs:
+      - setup
+      - build
     steps:
       - name: "Checkout"
         uses: https://data.forgejo.org/actions/checkout@v3
