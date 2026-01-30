@@ -91,7 +91,7 @@ jobs:
         uses: https://forgejo.van-de-weerd.net/actions/twine@v1
         with:
           repository: testpypi
-          token: ${{ secrets.PYPI_TEST_TOKEN }}
+          token: ${{ secrets.TEST_PYPI_TOKEN }}
 
       - name: "Publish to PyPI"
         if: ${{ github.ref_name == 'master' }}

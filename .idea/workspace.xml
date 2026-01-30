@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../actions/twine/action.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../actions/twine/action.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../actions/twine" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
@@ -60,7 +59,7 @@
     "SHELLCHECK.PATH": "/home/michael/.local/share/JetBrains/PyCharm2025.3/Shell Script/shellcheck",
     "Shell Script.migrate.sh.executor": "Run",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/home/michael/git/actions/python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
