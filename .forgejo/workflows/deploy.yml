@@ -119,5 +119,4 @@ jobs:
             tag: ${{ needs.setup.outputs.tag }}
             override: true
             prerelease: ${{ github.ref_name == 'develop' }}
-            release-notes-assistant: true
             release-dir: dist
