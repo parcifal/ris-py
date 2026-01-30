@@ -1,12 +1,30 @@
-on:
-  push:
-    branches:
-      - develop
-      - master
+on: [ push ]
 
 jobs:
-  setup:
+  lint:
     runs-on: docker
+    steps:
+      - uses: https://data.forgejo.org/actions/checkout@v3
+
+      - name: "Run PyLint"
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/pylint@master
+        with:
+          sources: ris test
+
+  test:
+    runs-on: docker
+    steps:
+      - uses: https://data.forgejo.org/actions/checkout@v3
+
+      - name: "Run PyTest"
+        uses: https://forgejo.van-de-weerd.net/parcifal/common/pytest@master
+
+  setup:
+    if: github.ref_name == 'develop' || github.ref_name == 'master'
+    runs-on: docker
+    needs:
+      - lint
+      - test
     outputs:
       tag: ${{ steps.tag.outputs.name }}
       version: ${{ steps.version.outputs.value }}
@@ -34,7 +52,9 @@ jobs:
           echo "name=$TAG" >> "$GITHUB_OUTPUT"
 
   build:
+    if: github.ref_name == 'develop' || github.ref_name == 'master'
     runs-on: docker
+    needs: setup
     outputs:
       dist: ${{ steps.build.outputs.dist }}
     steps:
@@ -54,6 +74,7 @@ jobs:
             ${{ steps.build.outputs.dist }}*.whl
 
   publish:
+    if: github.ref_name == 'develop' || github.ref_name == 'master'
     runs-on: docker
     needs: build
     steps:
@@ -91,32 +112,32 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.FORGEJO_PYPI_TOKEN }}
 
   release:
-      runs-on: docker
-      needs:
-        - setup
-        - build
-      steps:
-        - name: "Checkout"
-          uses: https://data.forgejo.org/actions/checkout@v3
+    if: github.ref_name == 'develop' || github.ref_name == 'master'
+    runs-on: docker
+    needs: build
+    steps:
+      - name: "Checkout"
+        uses: https://data.forgejo.org/actions/checkout@v3
 
-        - name: "Download dist"
-          uses: https://data.forgejo.org/actions/download-artifact@v3
-          with:
-            name: "dist"
-            path: dist
+      - name: "Download dist"
+        uses: https://data.forgejo.org/actions/download-artifact@v3
+        with:
+          name: "dist"
+          path: dist
 
-        - name: "Create tag"
-          uses: https://forgejo.van-de-weerd.net/actions/git/tag/create@v1
-          with:
-            tag: ${{ needs.setup.outputs.tag }}
-            message: "Release ${{ needs.setup.outputs.tag }}"
+      - name: "Create tag"
+        uses: https://forgejo.van-de-weerd.net/actions/git/tag/create@v1
+        with:
+          tag: ${{ needs.setup.outputs.tag }}
+          message: "Release ${{ needs.setup.outputs.tag }}"
 
-        - name: "Create release"
-          uses: https://data.forgejo.org/actions/forgejo-release@v2.9.0
-          with:
-            direction: upload
-            title: "Release ${{ needs.setup.outputs.tag }}"
-            tag: ${{ needs.setup.outputs.tag }}
-            override: true
-            prerelease: ${{ github.ref_name == 'develop' }}
-            release-dir: dist
+      - name: "Create release"
+        uses: https://data.forgejo.org/actions/forgejo-release@v2.9.0
+        with:
+          direction: upload
+          title: "Release ${{ needs.setup.outputs.tag }}"
+          tag: ${{ needs.setup.outputs.tag }}
+          override: true
+          prerelease: ${{ github.ref_name == 'develop' }}
+          release-dir: dist
+
