@@ -15,7 +15,7 @@ It provides:
  - Safe HTML output using markupsafe
  - Concatenation and comparison support
 
- > Licensed under the [AGPLv3.0](license)
+ > Licensed under the [AGPLv3.0][license]
  
  > The RISify logo uses the [Twemoji](https://github.com/twitter/twemoji) 
  > project &copy; 2017 Twitter, licensed under
