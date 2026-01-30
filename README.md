@@ -2,7 +2,7 @@
 
 [![PyLint](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/lint.yml/badge.svg?label=PyLint)][lint]
 [![PyTest](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/test.yml/badge.svg?label=PyTest)][test]
-[![Deploy](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/deploy.yml/badge.svg?label=Deploy)][deploy]
+[![Workflow](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=Workflow)][workflow]
 [![PyPI Test Version](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://test.pypi.org&label=PyPI+Test)][pypi-test]
 [![PyPI Version](https://img.shields.io/pypi/v/RISify?label=PyPI)][pypi]
 
@@ -138,7 +138,7 @@ contributions are welcome.
 
 [lint]: https://forgejo.van-de-weerd.net/parcifal/ris-py/actions?workflow=lint.yml
 [test]: https://forgejo.van-de-weerd.net/parcifal/ris-py/actions?workflow=test.yml
-[deploy]: https://forgejo.van-de-weerd.net/parcifal/ris-py/actions?workflow=deploy.yml
+[workflow]: https://forgejo.van-de-weerd.net/parcifal/ris-py/actions?workflow=push.yml
 
 [pypi]: https://pypi.org/project/RISify/
 [pypi-test]: https://test.pypi.org/project/RISify/
