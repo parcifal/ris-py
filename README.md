@@ -15,7 +15,7 @@ It provides:
  - Safe HTML output using markupsafe
  - Concatenation and comparison support
 
- > Licensed under the [AGPLv3.0](LICENSE)
+ > Licensed under the [AGPLv3.0](license)
  
  > The RISify logo uses the [Twemoji](https://github.com/twitter/twemoji) 
  > project &copy; 2017 Twitter, licensed under
@@ -134,6 +134,8 @@ ris PT -vvv -l ris.log
 Found a bug? Have a suggestion? Open an issue or submit a merge request at
 [the Forgejo repository](https://forgejo.van-de-weerd.net/parcifal/ris-py). All 
 contributions are welcome.
+
+[license]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master/LICENSE
 
 [develop]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/develop
 [master]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master
