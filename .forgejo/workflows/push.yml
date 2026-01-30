@@ -8,7 +8,7 @@ jobs:
         uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyLint"
-        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@master
+        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@v1
         with:
           sources: ris test
 
@@ -19,7 +19,7 @@ jobs:
         uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyTest"
-        uses: https://forgejo.parcifal.dev/parcifal/common/pytest@master
+        uses: https://forgejo.parcifal.dev/parcifal/common/pytest@v1
 
   setup:
     if: github.ref_name == 'develop' || github.ref_name == 'master'
