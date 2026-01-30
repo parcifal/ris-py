@@ -4,5 +4,8 @@ __pycache__/
 .venv/
 
 pytest.xml
-coverage.xml
+coverage.*
 .coverage
+htmlcov/
+*,cover
+dist/

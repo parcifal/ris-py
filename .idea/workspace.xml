@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icon.svg" afterDir="false" />
-    </list>
+    <list default="true" id="790a4766-4580-42b2-b3d1-feed19466fdb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,38 +20,79 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "c5a9bbb6",
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;michaelvandeweerd&quot;,
+      &quot;fullname&quot;: &quot;Michaël van de Weerd&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@gitlab.com:parcifal/ris-py.git&quot;,
+    &quot;second&quot;: &quot;a2403873-eef6-4699-925e-667644794fb5&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;c5a9bbb6&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="323225nWmY04nIyBiZJHDq6maXF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests in test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/michael/git/parcifal/ris-py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests in test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHELLCHECK.PATH": "/home/michael/.local/share/JetBrains/PyCharm2025.3/Shell Script/shellcheck",
+    "Shell Script.migrate.sh.executor": "Run",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "update-readme",
+    "last_opened_file_path": "/home/michael/git/actions/python",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../common/git" />
+      <recent name="$PROJECT_DIR$/../common/tag/create" />
+      <recent name="$PROJECT_DIR$/../common/python/build" />
+      <recent name="$PROJECT_DIR$/../common/python/setup" />
       <recent name="$PROJECT_DIR$/ris" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Shell Script.migrate.sh">
+    <configuration name="migrate.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/../common/migrate.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/../common" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="ris-py" />
       <option name="ENV_FILES" value="" />
@@ -66,6 +104,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
@@ -73,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.migrate.sh" />
         <item itemvalue="Python tests.Python tests in test" />
       </list>
     </recent_temporary>
@@ -80,8 +120,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-PY-252.23892.515" />
-        <option value="bundled-python-sdk-7e47963ff851-f0eec537fc84-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.23892.515" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.308" />
+        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
       </set>
     </attachedChunks>
   </component>
@@ -93,7 +133,10 @@
       <option name="presentableId" value="Default" />
       <updated>1756634725017</updated>
       <workItem from="1756634726258" duration="8251000" />
-      <workItem from="1756709638556" duration="1196000" />
+      <workItem from="1756709638556" duration="2514000" />
+      <workItem from="1767991262546" duration="11109000" />
+      <workItem from="1769338548841" duration="30923000" />
+      <workItem from="1769522653365" duration="5687000" />
     </task>
     <servers />
   </component>

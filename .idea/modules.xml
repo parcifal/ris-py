@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../actions/git/.idea/git.iml" filepath="$PROJECT_DIR$/../../actions/git/.idea/git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../actions/python/.idea/python.iml" filepath="$PROJECT_DIR$/../../actions/python/.idea/python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../actions/release/.idea/release.iml" filepath="$PROJECT_DIR$/../../actions/release/.idea/release.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ris-py.iml" filepath="$PROJECT_DIR$/.idea/ris-py.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../actions/twine/.idea/twine.iml" filepath="$PROJECT_DIR$/../../actions/twine/.idea/twine.iml" />
     </modules>
   </component>
 </project>

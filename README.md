@@ -1,8 +1,9 @@
 # RISify
 
-[![pipeline status](https://gitlab.com/parcifal/ris-py/badges/master/pipeline.svg)](https://gitlab.com/parcifal/ris-py/-/pipelines)
-[![coverage report](https://gitlab.com/parcifal/ris-py/badges/master/coverage.svg)](https://gitlab.com/parcifal/ris-py/-/commits/master)
-[![PyPI version](https://img.shields.io/pypi/v/RISify)][pypi]
+[![develop](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
+[![master](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
+[![test.pypi.org](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://test.pypi.org&label=test.pypi.org)][pypi-test]
+[![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
@@ -14,7 +15,7 @@ It provides:
  - Safe HTML output using markupsafe
  - Concatenation and comparison support
 
- > Licensed under the [AGPLv3.0](LICENSE)
+ > Licensed under the [AGPLv3.0][license]
  
  > The RISify logo uses the [Twemoji](https://github.com/twitter/twemoji) 
  > project &copy; 2017 Twitter, licensed under
@@ -31,7 +32,7 @@ pip install RISify
 Or install directly from source:
 
 ```bash
-git clone git@gitlab.com:parcifal/ris-py.git
+git clone git@forgejo.van-de-weerd.net:parcifal/ris-py.git
 cd ris-py
 pip install .
 ```
@@ -131,7 +132,13 @@ ris PT -vvv -l ris.log
 ## Contributing
 
 Found a bug? Have a suggestion? Open an issue or submit a merge request at
-[the GitLab repository](https://gitlab.com/parcifal/ris-py). All 
+[the Forgejo repository](https://forgejo.van-de-weerd.net/parcifal/ris-py). All 
 contributions are welcome.
 
+[license]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master/LICENSE
+
+[develop]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/develop
+[master]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master
+
 [pypi]: https://pypi.org/project/RISify/
+[pypi-test]: https://test.pypi.org/project/RISify/
