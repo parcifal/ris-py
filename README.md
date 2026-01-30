@@ -1,10 +1,10 @@
 # RISify
 
-[![develop](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
-[![master](https://forgejo.van-de-weerd.net/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
+[![develop](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
+[![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
 [![test.pypi.org](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://test.pypi.org&label=test.pypi.org)][pypi-test]
 [![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
-[![foregjo.van-de-weerd.net](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi/simple/&label=forgejo.van-de-weerd.net)][forgejo]
+[![foregjo.van-de-weerd.net](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://forgejo.parcifal.dev/api/packages/parcifal/pypi/simple/&label=forgejo.parcifal.dev)][forgejo]
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
@@ -33,7 +33,7 @@ pip install RISify
 Or install directly from source:
 
 ```bash
-git clone git@forgejo.van-de-weerd.net:parcifal/ris-py.git
+git clone git@forgejo.parcifal.dev:parcifal/ris-py.git
 cd ris-py
 pip install .
 ```
@@ -133,14 +133,14 @@ ris PT -vvv -l ris.log
 ## Contributing
 
 Found a bug? Have a suggestion? Open an issue or submit a merge request at
-[the Forgejo repository](https://forgejo.van-de-weerd.net/parcifal/ris-py). All 
+[the Forgejo repository](https://forgejo.parcifal.dev/parcifal/ris-py). All 
 contributions are welcome.
 
-[license]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master/LICENSE
+[license]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master/LICENSE
 
-[develop]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/develop
-[master]: https://forgejo.van-de-weerd.net/parcifal/ris-py/src/branch/master
+[develop]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/develop
+[master]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master
 
 [pypi]: https://pypi.org/project/RISify/
 [pypi-test]: https://test.pypi.org/project/RISify/
-[forgejo]: https://forgejo.van-de-weerd.net/parcifal/-/packages/pypi/risify/
+[forgejo]: https://forgejo.parcifal.dev/parcifal/-/packages/pypi/risify/

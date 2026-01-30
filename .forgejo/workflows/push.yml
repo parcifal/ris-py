@@ -8,7 +8,7 @@ jobs:
         uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyLint"
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/pylint@master
+        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@master
         with:
           sources: ris test
 
@@ -19,7 +19,7 @@ jobs:
         uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyTest"
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/pytest@master
+        uses: https://forgejo.parcifal.dev/parcifal/common/pytest@master
 
   setup:
     if: github.ref_name == 'develop' || github.ref_name == 'master'
@@ -36,7 +36,7 @@ jobs:
 
       - name: "Retrieve version"
         id: version
-        uses: https://forgejo.van-de-weerd.net/parcifal/common/toml-attribute@v1
+        uses: https://forgejo.parcifal.dev/parcifal/common/toml-attribute@v1
         with:
           key: project.version
 
@@ -65,7 +65,7 @@ jobs:
 
       - name: "Build dist"
         id: build
-        uses: https://forgejo.van-de-weerd.net/actions/python/build@v1
+        uses: https://forgejo.parcifal.dev/actions/python/build@v1
 
       - name: "Upload dist"
         uses: https://data.forgejo.org/actions/upload-artifact@v3
@@ -88,23 +88,23 @@ jobs:
 
       - name: "Publish to PyPI Test"
         if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
+        uses: https://forgejo.parcifal.dev/actions/twine@v1
         with:
           repository: testpypi
           token: ${{ secrets.TEST_PYPI_TOKEN }}
 
       - name: "Publish to PyPI"
         if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
+        uses: https://forgejo.parcifal.dev/actions/twine@v1
         with:
           repository: pypi
           token: ${{ secrets.PYPI_TOKEN }}
 
       - name: "Publish to Forgejo PyPI"
         if: ${{ github.ref_name == 'master' }}
-        uses: https://forgejo.van-de-weerd.net/actions/twine@v1
+        uses: https://forgejo.parcifal.dev/actions/twine@v1
         with:
-          repository: https://forgejo.van-de-weerd.net/api/packages/parcifal/pypi
+          repository: https://forgejo.parcifal.dev/api/packages/parcifal/pypi
           token: ${{ secrets.FORGEJO_PYPI_TOKEN }}
 
   release:
@@ -124,7 +124,7 @@ jobs:
           path: dist
 
       - name: "Create tag"
-        uses: https://forgejo.van-de-weerd.net/actions/git/tag/create@v1
+        uses: https://forgejo.parcifal.dev/actions/git/tag/create@v1
         with:
           tag: ${{ needs.setup.outputs.tag }}
           message: "Release ${{ needs.setup.outputs.tag }}"
