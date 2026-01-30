@@ -18,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../actions/twine" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
@@ -57,7 +57,7 @@
     "SHELLCHECK.PATH": "/home/michael/.local/share/JetBrains/PyCharm2025.3/Shell Script/shellcheck",
     "Shell Script.migrate.sh.executor": "Run",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/michael/git/actions/python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
