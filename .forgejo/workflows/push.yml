@@ -86,13 +86,6 @@ jobs:
           name: "dist"
           path: dist
 
-      - name: "Publish to PyPI Test"
-        if: ${{ github.ref_name == 'develop' }}
-        uses: https://forgejo.parcifal.dev/actions/twine@v1
-        with:
-          repository: testpypi
-          token: ${{ secrets.TEST_PYPI_TOKEN }}
-
       - name: "Publish to PyPI"
         if: ${{ github.ref_name == 'master' }}
         uses: https://forgejo.parcifal.dev/actions/twine@v1

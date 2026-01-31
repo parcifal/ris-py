@@ -2,7 +2,6 @@
 
 [![develop](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
 [![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
-[![test.pypi.org](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://test.pypi.org&label=test.pypi.org)][pypi-test]
 [![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
@@ -141,4 +140,3 @@ contributions are welcome.
 [master]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master
 
 [pypi]: https://pypi.org/project/RISify/
-[pypi-test]: https://test.pypi.org/project/RISify/
