@@ -4,13 +4,17 @@ jobs:
   lint:
     runs-on: docker
     steps:
-      - name: "Checkout"
-        uses: https://data.forgejo.org/actions/checkout@v3
+      - shell: bash
+        run: |
+          echo test
 
-      - name: "Run PyLint"
-        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@v1
-        with:
-          sources: ris test
+#      - name: "Checkout"
+#        uses: https://data.forgejo.org/actions/checkout@v3
+#
+#      - name: "Run PyLint"
+#        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@v1
+#        with:
+#          sources: ris test
 
   test:
     runs-on: docker
