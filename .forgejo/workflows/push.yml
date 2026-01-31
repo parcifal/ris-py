@@ -7,10 +7,10 @@ jobs:
       - name: "Checkout"
         uses: https://data.forgejo.org/actions/checkout@v3
 
-#      - name: "Run PyLint"
-#        uses: https://forgejo.parcifal.dev/parcifal/common/pylint@v1
-#        with:
-#          sources: ris test
+      - name: "Run PyLint"
+        uses: https://forgejo.parcifal.dev/actions/pylint@v1
+        with:
+          sources: ris test
 
   test:
     runs-on: docker
@@ -19,7 +19,7 @@ jobs:
         uses: https://data.forgejo.org/actions/checkout@v3
 
       - name: "Run PyTest"
-        uses: https://forgejo.parcifal.dev/parcifal/common/pytest@v1
+        uses: https://forgejo.parcifal.dev/actions/pytest@v1
 
   setup:
     if: github.ref_name == 'develop' || github.ref_name == 'master'
@@ -36,7 +36,7 @@ jobs:
 
       - name: "Retrieve version"
         id: version
-        uses: https://forgejo.parcifal.dev/parcifal/common/toml-attribute@v1
+        uses: https://forgejo.parcifal.dev/actions/toml-attribute@v1
         with:
           key: project.version
 
