@@ -142,4 +142,3 @@ contributions are welcome.
 
 [pypi]: https://pypi.org/project/RISify/
 [pypi-test]: https://test.pypi.org/project/RISify/
-[forgejo]: https://forgejo.parcifal.dev/parcifal/-/packages/pypi/risify/
