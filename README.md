@@ -4,7 +4,7 @@
 [![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
 [![test.pypi.org](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://test.pypi.org&label=test.pypi.org)][pypi-test]
 [![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
-[![foregjo.van-de-weerd.net](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://forgejo.parcifal.dev/api/packages/parcifal/pypi/simple/&label=forgejo.parcifal.dev)][forgejo]
+[![forgejo.parcifal.dev](https://img.shields.io/pypi/v/RISify?pypiBaseUrl=https://forgejo.parcifal.dev/api/packages/parcifal/pypi/simple&label=forgejo.parcifal.dev)][forgejo]
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
