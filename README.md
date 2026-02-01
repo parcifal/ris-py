@@ -1,5 +1,8 @@
 # RISify
 
+[![release](https://img.shields.io/gitea/v/release/parcifal/ris-py?gitea_url=https%3A%2F%2Fforgejo.parcifal.dev&display_name=tag)][release]
+[![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2Fris-py?label=push%20gitlab)][gitlab]
+[![github](https://img.shields.io/github/last-commit/parcifal%2Fris-py?label=push%20github)][github]
 [![develop](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
 [![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
 [![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
@@ -136,6 +139,9 @@ contributions are welcome.
 
 [license]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master/LICENSE
 
+[release]: https://forgejo.parcifal.dev/parcifal/ris-py/releases/latest
+[gitlab]: https://gitlab.com/parcifal/ris-py
+[github]: https://github.com/parcifal/ris-py
 [develop]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/develop
 [master]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master
 
