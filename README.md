@@ -1,11 +1,11 @@
 # RISify
 
-[![release](https://img.shields.io/gitea/v/release/parcifal/ris-py?gitea_url=https%3A%2F%2Fforgejo.parcifal.dev&display_name=tag)][release]
-[![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2Fris-py?label=push%20gitlab)][gitlab]
-[![github](https://img.shields.io/github/last-commit/parcifal%2Fris-py?label=push%20github)][github]
+[![release](https://img.shields.io/gitea/v/release/parcifal/ris-py?gitea_url=https%3A%2F%2Fforgejo.parcifal.dev&label=latest+release)][release]
+[![pypi](https://img.shields.io/pypi/v/RISify?label=pypi+release)][pypi]
 [![develop](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
 [![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
-[![pypi.org](https://img.shields.io/pypi/v/RISify?label=pypi.org)][pypi]
+[![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2Fris-py?label=gitlab+mirror)][gitlab]
+[![github](https://img.shields.io/github/last-commit/parcifal%2Fris-py?label=github+mirror)][github]
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
