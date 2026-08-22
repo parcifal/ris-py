@@ -7,7 +7,7 @@
 [![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2FRISify?label=gitlab+mirror)][gitlab]
 [![github](https://img.shields.io/github/last-commit/parcifal%2FRISify?label=github+mirror)][github]
 
-![RISify logo](https://scm.parcifal.dev/parcifal/RISify/raw/branch/develop/assets/icon.png)
+![RISify logo](https://scm.parcifal.dev/parcifal/RISify/raw/branch/develop/assets/logo.png)
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
