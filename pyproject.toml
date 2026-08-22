@@ -4,7 +4,7 @@ build-backend  = "setuptools.build_meta"
 
 [project]
 name           = "RISify"
-version        = "1.2.6"
+version        = "1.2.7"
 description    = "Simplifies the encoding and decoding of Regional Indicator Symbols"
 readme         = "README.md"
 license        = "AGPL-3.0-only"
@@ -23,8 +23,8 @@ classifiers   = [
 dependencies = [ "tomli", "markupsafe" ]
 
 [project.urls]
-"Homepage"     = "https://forgejo.parcifal.dev/parcifal/ris-py"
-"Bug Tracker"  = "https://forgejo.parcifal.dev/parcifal/ris-py/-/issues"
+"Homepage"     = "https://scm.parcifal.dev/parcifal/RISify"
+"Bug Tracker"  = "https://scm.parcifal.dev/parcifal/RISify/-/issues"
 
 [project.scripts]
 ris = "ris.cli:main"

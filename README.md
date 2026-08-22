@@ -1,11 +1,13 @@
 # RISify
 
-[![release](https://img.shields.io/gitea/v/release/parcifal/ris-py?gitea_url=https%3A%2F%2Fforgejo.parcifal.dev&label=latest+release)][release]
+[![release](https://img.shields.io/gitea/v/release/parcifal/RISify?gitea_url=https%3A%2F%2Fscm.parcifal.dev&label=latest+release)][release]
 [![pypi](https://img.shields.io/pypi/v/RISify?label=pypi+release)][pypi]
-[![develop](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
-[![master](https://forgejo.parcifal.dev/parcifal/ris-py/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
-[![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2Fris-py?label=gitlab+mirror)][gitlab]
-[![github](https://img.shields.io/github/last-commit/parcifal%2Fris-py?label=github+mirror)][github]
+[![develop](https://scm.parcifal.dev/parcifal/RISify/badges/workflows/push.yml/badge.svg?label=develop&branch=develop)][develop]
+[![master](https://scm.parcifal.dev/parcifal/RISify/badges/workflows/push.yml/badge.svg?label=master&branch=master)][master]
+[![gitlab](https://img.shields.io/gitlab/last-commit/parcifal%2FRISify?label=gitlab+mirror)][gitlab]
+[![github](https://img.shields.io/github/last-commit/parcifal%2FRISify?label=github+mirror)][github]
+
+![RISify logo](https://scm.parcifal.dev/parcifal/RISify/raw/branch/develop/assets/icon.png)
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
 (RIS) — the Unicode characters used to represent country and region flags. 
@@ -19,9 +21,8 @@ It provides:
 
  > Licensed under the [AGPLv3.0][license]
  
- > The RISify logo uses the [Twemoji](https://github.com/twitter/twemoji) 
- > project &copy; 2017 Twitter, licensed under
- > [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+ > The RISify logo uses the Faroese flag from the [Twemoji][twemoji] project 
+ > &copy; 2017 Twitter, licensed under [CC-BY 4.0][cc-by-4.0].
 
 ## Installation
 
@@ -34,8 +35,8 @@ pip install RISify
 Or install directly from source:
 
 ```bash
-git clone git@forgejo.parcifal.dev:parcifal/ris-py.git
-cd ris-py
+git clone git@scm.parcifal.dev:parcifal/RISify.git
+cd RISify
 pip install .
 ```
 
@@ -134,15 +135,18 @@ ris PT -vvv -l ris.log
 ## Contributing
 
 Found a bug? Have a suggestion? Open an issue or submit a merge request at
-[the Forgejo repository](https://forgejo.parcifal.dev/parcifal/ris-py). All 
+[the Forgejo repository](https://scm.parcifal.dev/parcifal/RISify). All 
 contributions are welcome.
 
-[license]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master/LICENSE
+[license]: https://scm.parcifal.dev/parcifal/RISify/src/branch/master/LICENSE
 
-[release]: https://forgejo.parcifal.dev/parcifal/ris-py/releases/latest
-[gitlab]: https://gitlab.com/parcifal/ris-py
-[github]: https://github.com/parcifal/ris-py
-[develop]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/develop
-[master]: https://forgejo.parcifal.dev/parcifal/ris-py/src/branch/master
+[twemoji]: https://github.com/twitter/twemoji
+[cc-by-4.0]: https://creativecommons.org/licenses/by/4.0/
+
+[release]: https://scm.parcifal.dev/parcifal/RISify/releases/latest
+[gitlab]: https://gitlab.com/parcifal/RISify
+[github]: https://github.com/parcifal/RISify
+[develop]: https://scm.parcifal.dev/parcifal/RISify/src/branch/develop
+[master]: https://scm.parcifal.dev/parcifal/RISify/src/branch/master
 
 [pypi]: https://pypi.org/project/RISify/
