@@ -10,7 +10,7 @@
 ![RISify logo](https://scm.parcifal.dev/parcifal/RISify/raw/branch/develop/assets/logo.png)
 
 RISify is a Python library and CLI for working with Regional Indicator Symbols 
-(RIS) — the Unicode characters used to represent country and region flags. 
+(RIS): the Unicode characters used to represent country and region flags. 
 
 It provides:
 
